@@ -1,0 +1,136 @@
+<!doctype html>
+
+	<div class="socialshare">
+		<h3>Deel deze pagina via: </h3>
+		<div class="shareitem sharetwitter">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-text="Deze link twitter it:" data-url="<?php echo home_url('/'); ?>" data-via="REPLACE_THIS" data-width="120" data-count="horizontal">Tweet</a>
+		</div>
+		<div class="shareitem sharefacebook">
+			<div class="fb-like" data-href="<?php echo home_url('/'); ?>" data-send="false" data-layout="button_count" data-width="130" data-show-faces="false"></div>
+		</div>
+		<div class="shareitem sharelinkedin">
+			<script type="IN/Share" data-url="<?php echo home_url('/'); ?>" data-counter="right"></script>
+		</div>
+		<div class="shareitem sharegoogle">
+			<div class="g-plusone" data-size="medium" callback="plussed" data-href="<?php echo home_url('/'); ?>"></div>
+		</div>
+	</div>
+		
+	<div class="socialfollow">
+		<h3>Blijf op de hoogte met Social Media</h3>
+		<div class="followitem followtwitter">
+			<a href="https://twitter.com/REPLACE_THIS" class="twitter-follow-button" data-lang="nl">Follow @REPLACE_THIS</a>
+		</div>
+		<div class="followitem followfacebook">
+			<div class="fb-like" data-href="<?php echo home_url('/'); ?>" data-send="false" data-width="350" data-show-faces="false"></div>
+		</div>
+		<div class="followitem followlinkedin">
+			<script type="IN/CompanyProfile" data-id="REPLACE_THIS" data-format="hover" data-text="REPLACE_THIS"></script>
+		</div>
+	</div>
+	
+	<!-- Google +1	-->
+		<script type="text/javascript">
+			window.___gcfg={lang:"nl"},function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://apis.google.com/js/plusone.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}()
+		</script>
+	<!-- Linkedin inShare -->
+		<script src="http://platform.linkedin.com/in.js"></script>
+	<!-- Twitter -->
+		<!--<script src="http://twitter.com/statuses/user_timeline/exactwatjezoekt.json?callback=twitterCallback2&count=10"></script>-->
+		<script src="//platform.twitter.com/widgets.js"></script>
+	<!-- Facebook -->
+		<div id="fb-root"></div>
+		<script>
+			window.fbAsyncInit=function(){FB.init({appId:"REPLACE_THIS",status:!0,cookie:!0,xfbml:!0})},function(){var a=document.createElement("script");a.src=document.location.protocol+"//connect.facebook.net/nl_NL/all.js",a.async=!0,document.getElementById("fb-root").appendChild(a)}()
+		</script>
+		
+</body>
+
+/*	CSS RULES
+
+/* @group Social media */
+.socialshare {
+	border-bottom: 1px dashed #ccc;
+	width: 100%;
+	}
+.socialshare h3 {
+	margin: 0 0 2px;
+	display: inline;
+	float: left;
+	margin-right: 10px;
+	}
+.shareitem {
+	display: inline;
+	float: left;
+	height: 20px;
+	margin:  0 0 10px;
+	}
+.sharelinkedin {
+	margin-right: 6px;
+	}
+
+	
+	
+.socialfollow {
+	background: url('images/social/social_media.png') no-repeat 0 0;
+	color: #fff;
+	position: fixed;
+	left: -370px;
+	text-align: left;
+	top: 169px;
+	width: 340px;
+	height: 160px;
+	padding: 0 30px;
+	overflow: hidden;
+	-webkit-transition: all 300ms ease-in;
+	-moz-transition: all 300ms ease-in;
+	transition: all 300ms ease-in;
+	z-index: 666;
+	}
+.socialfollow:hover {
+	width: 400px;
+	height: 350px;
+	left: -3px;
+	overflow: visible;
+	-webkit-transition: all 200ms ease-out;
+	-moz-transition: all 200ms ease-out;
+	transition: all 200ms ease-out;
+	}
+.socialfollow h3 {
+	margin: 5px 0;
+	}
+.socialfollow a  {
+	color: #222;
+	font: 12px/1.3 arial, verdana, sans-serif;
+	}
+.followitem {
+	background: #fff;
+	margin:  0 0 4px;
+	min-height: 26px;
+	max-width: 330px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	behavior: url(/wp-content/themes/bandbreed/scripts/PIE.htc);
+	}
+.followitem:hover {
+	background: #ccc;
+	}
+.followsocial {
+	color: #fff;
+	text-indent: 50px;
+	}
+.followtwitter {
+	padding: 4px 4px 0;
+	}
+.followfacebook {
+	padding: 4px;
+	}
+.followlinkedin {
+	line-height: 26px;
+	padding: 4px;
+	}
+.followgoogle {
+	}
+	
+/* @end */

@@ -1,0 +1,72 @@
+
+/* @group Sticky Footer */
+/* http://www.cssstickyfooter.com */
+
+* {
+	margin:0;
+	padding:0;
+	}
+html,
+body {
+	height: 100%;
+	}
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;
+	}
+
+#sitewrapper {
+	min-height: 100%;
+	}
+#bodywrapper {
+	/* overflow:auto; */
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-bottom: 150px;
+	clear: both;
+	}
+footer {
+	position: relative;
+	margin-top: -150px;
+	height: 150px;
+	clear: both;
+	}
+
+#sitewrapper {
+	width: 100%
+	}
+#headerwrapper {
+	width: 960px;
+	margin: 0 auto;
+	}
+#bodywrapper {
+	width: 960px;
+	margin: 0 auto;
+	}
+#footerwrapper {
+	width: 960px;
+	margin: 0 auto;
+	height: 140px;
+	}
+
+
+
+
+<div id="sitewrapper">
+	<header>
+  		<div id="headerwrapper">
+			
+        </div><!-- end of headerwrapper -->
+    </header>
+	<div id="bodywrapper" role="main">
+    	
+    </div><!-- end of bodywrapper -->
+</div> <!--! end of sitewrapper -->
+<footer>
+	<div id="footerwrapper">
+		
+	</div><!-- end of footerwrapper -->
+</footer>
