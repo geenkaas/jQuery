@@ -2,9 +2,6 @@
 function geenTabs() {
 
 	$('ul').each(function() {
-		$(this).children('li').first().addClass('alpha');
-		$(this).children('li').last().addClass('omega');
-		
 		$('ul li:first-child').addClass('alpha');
 		$('ul li:last-child').addClass('omega');
 	});
