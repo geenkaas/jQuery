@@ -1,10 +1,9 @@
 //	geentabs function
 function geenTabs() {
 
-	$('ul').each(function() {
-		$('ul li:first-child').addClass('alpha');
-		$('ul li:last-child').addClass('omega');
-	});
+	//	Add Alpha and Omega classes to first ans last List items.
+	$('ul li:first-child').addClass('alpha');
+	$('ul li:last-child').addClass('omega');
 
 	//	activate and show the first item
 	$('#tabs ul li').eq(0).addClass('active');
