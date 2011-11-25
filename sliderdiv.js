@@ -4,10 +4,10 @@
 var sliderCollection;
 var sliderHeight;
 var moveNext = true;
-var geenCounter = 666;
+var geenCounter = 666; //	Z-index counter, make sure it is higher than your content
 var activeSlider;
 var nextSlider;
-var slideTimer = 6000;
+var slideTimer = 8000;	//	Timer in milliseconds, after this the next slide is loaded
 var geenTimeOut;
 
 
