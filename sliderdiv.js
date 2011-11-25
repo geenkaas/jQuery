@@ -17,6 +17,14 @@ $(document).ready(function(){
 	//	Put all sliders in a variable
 	sliderCollection = $('.slidediv');
 	
+	//	If there is only one slide, show it and hide controls
+	if (sliderCollection.length == 1){
+		sliderCollection.show();
+		$('.slidercontrols').hide();
+		//	Cancel the rest of the functionality
+		return;
+	};
+	
 	//	Whenyou click on a next or previous button
 	$('.slidercontrols div[btn]').click(handler_prevnext_click);
 	
