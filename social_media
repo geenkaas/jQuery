@@ -36,7 +36,8 @@
 	<!-- Linkedin inShare -->
 		<script src="http://platform.linkedin.com/in.js"></script>
 	<!-- Twitter -->
-		<!--<script src="http://twitter.com/statuses/user_timeline/exactwatjezoekt.json?callback=twitterCallback2&count=10"></script>-->
+		<!-- Get Tweets from one user: <script src="http://twitter.com/statuses/user_timeline/REPLACE_USER.json?callback=twitterCallback2&count=10"></script>-->
+		<!-- Get tweets from a list bij a user	<script src="https://api.twitter.com/1/lists/statuses.json?slug=REPLACE_LISTNAME&owner_screen_name=REPLACE_USER&callback=twitterCallback&page=1&per_page=6"></script>-->
 		<script src="//platform.twitter.com/widgets.js"></script>
 	<!-- Facebook -->
 		<div id="fb-root"></div>
@@ -45,6 +46,27 @@
 		</script>
 		
 </body>
+
+// JAVASCRIPT
+
+function twitterCallback(tweets) {
+	var statusHTML = [];
+	for (var i=0; i<tweets.length; i++){
+		var username = tweets[i].user.screen_name;
+		var profile_image = tweets[i].user.profile_image_url;
+		var status = tweets[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+			return '<a href="'+url+'">'+url+'</a>';
+		}).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
+			return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+		});
+		statusHTML.push('<li><a href="http://twitter.com/'+username+'/"><img src="'+profile_image+'" /></a><p><span>'+status+'</span></p></li>');
+	};
+	var twitterdiv = document.getElementById('twitterfeed');
+	if (twitterdiv != undefined) {
+		twitterdiv.innerHTML = statusHTML.join('');
+	};
+};
+
 
 /*	CSS RULES
 
