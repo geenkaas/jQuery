@@ -31,8 +31,7 @@
 	$(document).ready(function() {
 	
 		//	Basic functions to do once
-		
-		initScreen();
+			initScreen();
 		
 	});	//	////	End document ready
 
@@ -55,7 +54,7 @@
 	$(window).resize(function() {
 	
 		//	Update background
-		initScreen();
+			initScreen();
 				
 	});	//	////	End window resize
 
@@ -63,7 +62,11 @@
 //	Click handlers																			  	  //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function handler_templateClick() {
+	
+	//	Stuff to do when clicked
 
+};
 	
 //	////	End click handlers
 
@@ -71,21 +74,45 @@
 //	Functions																					  //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function initScreen() {
+//	Stuff to do when building the page
+	function initScreen() {
+	
+		if (idim < sd) {
+			//	When screen is taller then background image
+				bg.width(ww * 1.05).height(ww / idim * 1.05);
+		} else if (idim > sd) {
+			//	When screen is wider then background image
+				bg.height(wh * 1.05).width(wh * idim * 1.05);
+		};
+		
+		var offsetleft = (ww - bg.width())/2;
+		var offsettop = (wh - bg.height())/3;
+		bg.css({
+			left: offsetleft,
+			top: offsettop
+		});
+		
+	};
 
-	if(idim < sd) {
-		$('#bg').width(ww * 1.05).height(ww / idim * 1.05);
-	} else if (idim > sd) {
-		$('#bg').height(wh * 1.05).width(wh * idim * 1.05);
+//	Example functionalities to copy
+	function template() {
+		//	Attach click functionality
+			$('#myDiv').click(handler_templateClick);
+		if ($('#myDiv').length == 1) {
+			//	Do stuff only if myDiv exists
+		};	
+		
 	};
 	
-	var offsetleft = (ww - $('#bg').width())/2;
-	var offsettop = (wh - $('#bg').height())/3;
-	$('#bg').css('left', offsetleft + 'px').css('top', offsettop + 'px');
-	
-};
-	
 //	////	End functions
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//	Features (Complete working functionalities)													  //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	
+//	////	End features
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Plug-ins 													  								  //
