@@ -1,56 +1,86 @@
+/* @group Normalize */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	display: block;
+	}
+audio[controls], canvas, video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	}
+html {
+	background: #fff;
+	font-size: 100%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: rgba(255,0,0,0.5);
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	}
+body {
+	cursor: default;
+	margin: 0;
+	min-width: 960px;
+	text-align: center;
+	text-rendering: optimizeLegibility;
+	-moz-font-feature-settings: "liga=1";
+	-ms-font-feature-settings: "liga" 1;
+	-moz-font-feature-settings: "kern=1";
+	-ms-font-feature-settings: "kern" 1;
+	}
+body, button, input, select, textarea {
+	font: 15px/1.4 sans-serif;
+	color: #222;
+	}
+#sitewrapper,
+footer {
+	text-align: left;
+	}
+/* @end */
 
 /* @group Sticky Footer */
-/* http://www.cssstickyfooter.com */
-
 * {
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	}
 html,
 body {
 	height: 100%;
 	}
 body:before {
-	content:"";
-	height:100%;
-	float:left;
-	width:0;
-	margin-top:-32767px;
+	content: "";
+	height: 100%;
+	float: left;
+	margin-top: -32767px;
+	width: 0;
 	}
-
 #sitewrapper {
 	min-height: 100%;
+	width: 100%;
 	}
 #bodywrapper {
+	clear: both;
 	/* overflow:auto; */
 	overflow-x: hidden;
 	overflow-y: auto;
-	padding-bottom: 150px;
-	clear: both;
+	padding-bottom: 70px;
 	}
 footer {
-	position: relative;
-	margin-top: -150px;
-	height: 150px;
 	clear: both;
+	height: 70px;
+	margin-top: -70px;
+	position: relative;
 	}
-
-#sitewrapper {
-	width: 100%
-	}
-#headerwrapper {
-	width: 960px;
-	margin: 0 auto;
-	}
-#bodywrapper {
-	width: 960px;
-	margin: 0 auto;
-	}
+header,
+#bodywrapper,
 #footerwrapper {
-	width: 960px;
 	margin: 0 auto;
-	height: 140px;
+	width: 960px;
 	}
+/* @end */
+
 
 
 
@@ -64,7 +94,8 @@ footer {
 	<div id="bodywrapper" role="main">
     	
     </div><!-- end of bodywrapper -->
-</div> <!--! end of sitewrapper -->
+</div><!--! end of sitewrapper -->
+
 <footer>
 	<div id="footerwrapper">
 		

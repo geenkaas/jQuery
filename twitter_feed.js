@@ -8,9 +8,10 @@ ul#twitterfeed {
 	padding: 0;
 	}
 ul#twitterfeed li {
-	border-bottom: 1px dotted #333;
-	margin: 0 0 10px;
-	min-height: 58px;
+	background: silver;
+	margin: 0 0 20px;
+	min-height: 50px;
+	padding: 10px;
 	}
 ul#twitterfeed img {
 	float: left;
@@ -37,7 +38,7 @@ ul#twitterfeed p {
 			statusHTML.push('<li><a href="http://twitter.com/'+username+'/"><h3>'+username+'</h3><h4>'+name+'</h4></a><p><span>'+status+'</span></p><h4>'+date+'</h4></li>');
 		};
 		if ($('#twitterfeed').length !== 0) {
-			document.getElementById('twitterfeed').innerHTML = statusHTML.join('');
+			$('#twitterfeed').html(statusHTML.join(''));
 		};
 	};
 
