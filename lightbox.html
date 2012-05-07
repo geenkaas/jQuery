@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="nl">
-  
+
 <head>
   <meta charset="utf-8">
   <title>Lightbox Demo</title>
   <meta name="description" content="CSS and Jquery Lightbox demo">
   <meta name="viewport" content="width=960">
-  
+
 <style type="text/css" title="text/css">
 #lb-demo {
   background: rgba(0,0,0,.8);
@@ -45,7 +45,7 @@
 
 <body>
   <button id="lb-popup" data-lb="lightbox-1">Open lightbox</button>
-  
+
   <div id="lb-demo" class="lightbox-1">
     <div class="lightbox">
       <div class="close">
@@ -56,7 +56,7 @@
       </div>
     </div>
   </div>
-  
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
   <script>
@@ -69,19 +69,19 @@ function geenLightbox() {
     var whichLightbox = $(this).attr('data-lb');
     $('.' + whichLightbox ).fadeIn();
   });
-  
+
     $('.close').on('click', function() {
       $(this).closest('[data-lb="lightbox"]').fadeOut();
     });
     $('.lb-noclose').on('click', function(e) {
       e.stopPropagation();
     });
-    
+
     $('#lb-demo').on('click', function() {
       $(this).fadeOut();
     });
   };
   </script>
-  
+
 </body>
 </html>
