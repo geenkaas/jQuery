@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="nl">
+  
+<head>
+  <meta charset="utf-8">
+  <title>Lightbox Demo</title>
+  <meta name="description" content="CSS and Jquery Lightbox demo">
+  <meta name="viewport" content="width=960">
+  
+<style type="text/css" title="text/css">
+#lb-demo {
+  background: rgba(0,0,0,.8);
+  display: none;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 666666;
+  }
+.lightbox {
+  background: #fff;
+  position: fixed;
+  left: 50%;
+  width: 960px;
+  margin-left: -480px;
+  top: 50%;
+  min-height: 50%;
+  margin-top: -25%;
+  }
+.lightbox .close {
+  color: rgba(255,255,255,.5);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  }
+.lightbox .close:hover {
+  color: rgba(255,255,255,1);
+  }
+</style>
+</head>
+
+<body>
+  <button id="lb-popup" data-lb="lightbox-1">Open lightbox</button>
+  
+  <div id="lb-demo" class="lightbox-1">
+    <div class="lightbox">
+      <div class="close">
+        Sluiten X
+      </div>
+      <div id="lb-content" class="lb-noclose">
+        Content
+      </div>
+    </div>
+  </div>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    geenLightbox();
+  });
+
+function geenLightbox() {
+  $('#lb-popup').on('click', function() {
+    var whichLightbox = $(this).attr('data-lb');
+    $('.' + whichLightbox ).fadeIn();
+  });
+  
+    $('.close').on('click', function() {
+      $(this).closest('[data-lb="lightbox"]').fadeOut();
+    });
+    $('.lb-noclose').on('click', function(e) {
+      e.stopPropagation();
+    });
+    
+    $('#lb-demo').on('click', function() {
+      $(this).fadeOut();
+    });
+  };
+  </script>
+  
+</body>
+</html>
