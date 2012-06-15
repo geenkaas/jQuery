@@ -1,0 +1,78 @@
+<!doctype html>
+<!html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <title>Scaling background Demo</title>
+  <meta name="description" content="Templaat">
+
+<style type="text/css" title="text/css">
+
+* {
+  margin: 0;
+  }
+#background {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  }
+#background img {
+position: absolute;
+  -ms-interpolation-mode: bicubic;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="background">
+  <img src="http://www.geenkaas.nl/balls.jpg" />
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script>
+  var wh;
+  var ww;
+  var dh;
+  var sd;
+  var iw = 640;
+  var ih = 480;
+  var idim = iw/ih;
+  
+  $(window).resize(function() {
+    initScreen();
+  });
+
+  $(window).bind("orientationchange", function() {
+    initScreen();
+  });
+
+  $(document).ready(function() {
+    initScreen();
+  });
+
+function initScreen() {
+
+  wh = $(window).height();
+  ww = document.body.clientWidth;
+  dh = $(document.body).height();
+  sd = ww / wh;
+      
+  var bg = $('#background img');  //  Background image
+  
+  if (idim < sd) {
+      bg.width(ww).height(ww / idim);
+  } else if (idim > sd) {
+      bg.height(wh).width(wh * idim);
+  };
+  
+  var offsetleft = Math.floor((ww - bg.width())/2);
+  var offsettop = Math.floor((wh - bg.height())/3);
+  bg.css('left', offsetleft + 'px').css('top', offsettop + 'px');    
+};
+</script>
+
+</body>
+</html>

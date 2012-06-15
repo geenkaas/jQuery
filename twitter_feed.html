@@ -1,0 +1,95 @@
+<!doctype html>
+<!html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <title>Twitter feed Demo</title>
+
+<style type="text/css" title="text/css">
+#twitterwrapper {
+	float: left;
+	overflow: hidden;
+	width: 300px;
+	}
+ul#twitterfeed {
+	list-style: none;
+	}
+ul#twitterfeed li {
+	float: left;
+	}
+ul#twitterfeed img {
+	float: left;
+	}
+#twitterwrapper a {
+	}
+#twitterwrapper h3 {
+	}
+#twitterwrapper h4 {
+	}
+ul#twitterfeed p {
+	}
+</style>
+</head>
+
+<body>
+
+
+<div id="twitterwrapper">
+	<ul id="twitterfeed">
+		<li>Twitter is temporary over capacity</li>
+	</ul>
+</div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    geenTwitter();
+  });
+  
+//	Animating Twitter rotation
+	function geenTwitter() {
+		var time = 6000
+		setTimeout(function() {
+			var tul = $('#twitterwrapper ul');
+			var tli = $('#twitterwrapper li');
+			tli.first().fadeTo('swing',0).slideUp(600,'swing', function() {
+				$(this).parent().append($(this));
+				$(this).show();
+  			});
+			geenTwitter();
+		}, time);
+	};
+
+//	Loading Twitter JSON and building HTML output
+	function twitterCallback(tweets) {
+		var statusHTML = [];
+		for (var i=0; i < tweets.length; i++){
+			var username = tweets[i].user.screen_name;
+			var name = tweets[i].user.name;
+			var date = tweets[i].created_at;
+			var profile_image = tweets[i].user.profile_image_url;
+			var status = tweets[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+				return '<a href="'+url+'">'+url+'</a>';
+			}).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
+				return	reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+			});
+			statusHTML.push('<li><p><span>'+status+'</span></p>');
+		};
+		if($('#twitterfeed').length > 0){
+			document.getElementById('twitterfeed').innerHTML = statusHTML.join('');
+		};
+	};
+	
+		
+	
+//	format string function
+	String.prototype.format=function() {var a=/\{\d+\}/g,b=arguments;return this.replace(a,function(a) {return b[a.match(/\d+/)]})}	
+  </script>
+  
+	<script src="http://platform.twitter.com/widgets.js"></script>
+	<script src="http://twitter.com/statuses/user_timeline/cargoguide.json?callback=twitterCallback&count=5"></script>
+	
+
+</body>
+</html>
