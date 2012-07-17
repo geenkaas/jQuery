@@ -1,0 +1,44 @@
+<!doctype html>
+<!html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <title>Delayed image loader Demo</title>
+  <meta name="description" content="Templaat">
+
+<style type="text/css" title="text/css">
+
+</style>
+</head>
+
+<body>
+
+  <div class="delayed">
+    <img src="/wp-content/themes/geenkaas/images/loading.gif" data-src="/wp-content/themes/geenkaas/images/echte-url.jpg" width="" height="" alt="" />
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+  geenLoader();
+  });
+  
+  $(window).scroll(function() {
+    scrolled = parseInt($(window).scrollTop());
+    geenLoader();
+  });
+
+  
+function geenLoader() {
+  $('.delayed').each(function() {
+    var trueSrc = $(this).find('img').attr('data-src');
+    if ($(this).offset().top < scrolled + ($(window).height() * 1.5) ) {
+      $(this).find('img').attr('src', trueSrc);
+    };
+  });
+};
+  </script>
+
+</body>
+</html>
