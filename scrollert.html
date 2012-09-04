@@ -1,0 +1,128 @@
+<!doctype html>
+<!html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <title>Templaat Demo</title>
+  <meta name="description" content="Templaat">
+
+<style type="text/css" title="text/css">
+
+</style>
+</head>
+
+<body>
+
+<p>Dit is een zin</p>
+<h1 class="scrollToXXX">Scroll naar benee</h1>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<h1 class="scrollToHere scrollTop">Scroll to top</h1>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<p>Dit is een zin</p>
+<h1 class="scrollTop">Scroll to top</h1>
+
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  <script>
+  
+	var scrolled = 0;
+	
+	
+//	Stuff to do when browser is scrolled 
+	function scrollWindow() {
+			
+		//	Scroll the menu only so far.
+			scrolled = parseInt($(window).scrollTop());
+			//document.title = scrolled;
+
+	};
+	
+	
+  $(document).ready(function() {
+    geenScript();
+  });
+
+function geenScript() {
+ $('.scrollTop').on('click', function(){
+	 $(document).scrollTop(0);
+ });
+ 
+ $('.scrollToXXX').on('click', function(){
+ var scrolltowhere = $('.scrollToHere').offset().top
+	 $(document).scrollTop(scrolltowhere);
+ });
+  };
+  </script>
+
+</body>
+</html>
